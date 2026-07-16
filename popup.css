@@ -21,9 +21,11 @@
 * { box-sizing: border-box; }
 button, .card, .chip, .tab, .keyrow { transition: background-color .12s ease, border-color .12s ease, filter .12s ease; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-/* min(560px, 100vh): cap the panel to whatever height Firefox actually allocates so a short
-   viewport (small screen / zoom / toolbar) can't clip the footer off the bottom (was fixed 560px). */
-html, body { height: min(560px, 100vh); margin: 0; overflow: hidden; }
+/* height:560px is the panel's natural size; max-height:100vh only *caps* it on a short viewport
+   (small screen / zoom) so Firefox can't clip the footer. Must NOT be min(560px,100vh): in a Chrome
+   popup 100vh under-resolves during initial layout, so min() picked the tiny value and — with the
+   fixed-height flex column + overflow:hidden — chopped the footer off with no way to scroll to it. */
+html, body { height: 560px; max-height: 100vh; margin: 0; overflow: hidden; }
 body {
   width: 420px; display: flex; flex-direction: column;
   font: 13px/1.45 -apple-system, "Segoe UI", Roboto, sans-serif;
