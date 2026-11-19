@@ -42,6 +42,7 @@ const OMNI_WEB = (OMNI_GEN.web || []).map((w) => ({
   slug: w.slug,
   label: w.label,
   site: w.site,
+  loginUrl: w.loginUrl || "",
   host: w.host,
   perms: w.perms,
   hostRe: new RegExp(w.hostReSrc, "i"),
@@ -58,8 +59,37 @@ for (const p of OMNI_WEB) OMNI_WEB_MAP[p.key] = p;
 const APIKEY_EXTRA_FIELDS = {
   "google-pse-search": [{ key: "cx", label: "Search Engine ID (cx)", required: true, hint: "Programmable Search Engine ID" }],
 };
+// The generated `get` is the provider's HOMEPAGE (that's what OmniRoute's source carries) — useless when you
+// need a key and don't remember where the console hides it. Deep links straight to the "API keys" page:
+const APIKEY_KEY_URL = {
+  openai: "https://platform.openai.com/api-keys",
+  anthropic: "https://console.anthropic.com/settings/keys",
+  gemini: "https://aistudio.google.com/apikey",
+  groq: "https://console.groq.com/keys",
+  xai: "https://console.x.ai/",
+  mistral: "https://console.mistral.ai/api-keys",
+  perplexity: "https://www.perplexity.ai/account/api/keys",
+  cohere: "https://dashboard.cohere.com/api-keys",
+  deepseek: "https://platform.deepseek.com/api_keys",
+  openrouter: "https://openrouter.ai/settings/keys",
+  together: "https://api.together.ai/settings/api-keys",
+  fireworks: "https://fireworks.ai/account/api-keys",
+  huggingface: "https://huggingface.co/settings/tokens",
+  cerebras: "https://cloud.cerebras.ai/",
+  nvidia: "https://build.nvidia.com/settings/api-keys",
+  novita: "https://novita.ai/settings/key-management",
+  venice: "https://venice.ai/settings/api",
+  chutes: "https://chutes.ai/app/api",
+  nebius: "https://studio.nebius.com/settings/api-keys",
+  sambanova: "https://cloud.sambanova.ai/apis",
+  zai: "https://z.ai/manage-apikey/apikey-list",
+  glm: "https://z.ai/manage-apikey/apikey-list",
+  "glm-cn": "https://open.bigmodel.cn/usercenter/apikeys",
+  kimi: "https://platform.moonshot.ai/console/api-keys",
+  ai21: "https://studio.ai21.com/account/api-key",
+};
 const OMNI_APIKEY = (OMNI_GEN.apikey || []).map((a) => ({
-  slug: a.slug, label: a.label, get: a.get, free: !!a.free, family: a.family || T("cat_other", "Прочее"),
+  slug: a.slug, label: a.label, get: APIKEY_KEY_URL[a.slug] || a.get, deepLink: !!APIKEY_KEY_URL[a.slug], free: !!a.free, family: a.family || T("cat_other", "Прочее"),
   extra: APIKEY_EXTRA_FIELDS[a.slug] || null,
 }));
 const OMNI_APIKEY_MAP = {};
@@ -122,9 +152,32 @@ function omniAccountId(cred) {
   return h.toString(16).slice(0, 8);
 }
 
+// Is the accountId a real account identity (an id claim inside a JWT) rather than a hash of the whole
+// credential? Only a stable id may be used to find "the same account" among existing connections.
+function omniAccountIdStable(cred) {
+  const m = String(cred || "").match(/eyJ[A-Za-z0-9_-]+\.(eyJ[A-Za-z0-9_-]+)/);
+  if (!m) return false;
+  try {
+    const p = JSON.parse(atob(m[1].replace(/-/g, "+").replace(/_/g, "/")));
+    return !!(p.id || p.sub || p.user_id || p.userId || p.uid);
+  } catch (e) { return false; }
+}
+
+// Account e-mail from a JWT in the credential, when the provider puts one there — display only (the
+// connection NAME keeps the accountId so OmniRoute's upsert-by-name stays stable). "" when unknown.
+function omniAccountEmail(cred) {
+  const m = String(cred || "").match(/eyJ[A-Za-z0-9_-]+\.(eyJ[A-Za-z0-9_-]+)/);
+  if (!m) return "";
+  try {
+    const p = JSON.parse(atob(m[1].replace(/-/g, "+").replace(/_/g, "/")));
+    const e = p.email || p.mail || p.preferred_username || "";
+    return /@/.test(e) ? String(e).slice(0, 80) : "";
+  } catch (e) { return ""; }
+}
+
 if (typeof self !== "undefined") {
   Object.assign(self, {
     OMNI_BASE, OMNI_WEB, OMNI_WEB_MAP, OMNI_APIKEY, OMNI_APIKEY_MAP, OMNI_OAUTH, OMNI_OAUTH_MAP,
-    omniBuildCredential, omniAccountId,
+    omniBuildCredential, omniAccountId, omniAccountEmail, omniAccountIdStable,
   });
 }

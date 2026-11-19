@@ -20,15 +20,6 @@
   "popup_detach": {
     "message": "Detach into a separate window"
   },
-  "popup_tabWeb": {
-    "message": "🍪 Web"
-  },
-  "popup_tabKey": {
-    "message": "🔑 API key"
-  },
-  "popup_tabOauth": {
-    "message": "🔐 OAuth"
-  },
   "popup_probeAll": {
     "message": "🩺 Check all"
   },
@@ -224,17 +215,11 @@
   "web_send": {
     "message": "Send to OmniRoute"
   },
-  "web_predictUpd": {
-    "message": "will overwrite the existing connection with fresh cookies"
-  },
   "web_readyTitle": {
     "message": "Ready to send"
   },
   "web_sendAll": {
     "message": "Send all ($1)"
-  },
-  "web_sendAllSplit": {
-    "message": "$1 will update · $2 will be created"
   },
   "web_fixDead": {
     "message": "🔄 Refresh only the broken ones ($1)"
@@ -685,5 +670,506 @@
   },
   "perm_grant": {
     "message": "Grant access"
+  },
+  "nav_dash": {
+    "message": "Pulse"
+  },
+  "nav_wizard": {
+    "message": "Wizard"
+  },
+  "nav_web": {
+    "message": "Web sessions"
+  },
+  "nav_key": {
+    "message": "API keys"
+  },
+  "nav_oauth": {
+    "message": "OAuth"
+  },
+  "nav_table": {
+    "message": "Gateway table"
+  },
+  "nav_full": {
+    "message": "Open full screen"
+  },
+  "dash_working": {
+    "message": "working"
+  },
+  "dash_broken": {
+    "message": "$1 broken"
+  },
+  "dash_conns": {
+    "message": "connections: $1"
+  },
+  "dash_update": {
+    "message": "↑ v$1 available"
+  },
+  "dash_updateTitle": {
+    "message": "Open OmniRoute settings to update"
+  },
+  "dash_refreshAll": {
+    "message": "🔄 Refresh all sessions"
+  },
+  "dash_fillMissing": {
+    "message": "➕ Add missing"
+  },
+  "dash_fillMissingN": {
+    "message": "➕ Add missing ($1)"
+  },
+  "dash_grpWarn": {
+    "message": "Needs attention soon"
+  },
+  "dash_grpOk": {
+    "message": "Working"
+  },
+  "dash_grpUnk": {
+    "message": "Not checked yet"
+  },
+  "dash_emptyTitle": {
+    "message": "No connections in OmniRoute yet"
+  },
+  "dash_emptyHint": {
+    "message": "Press “Add missing” — the Wizard walks you through the sites one by one."
+  },
+  "flt_all": {
+    "message": "All"
+  },
+  "flt_bad": {
+    "message": "Broken"
+  },
+  "flt_warn": {
+    "message": "Warnings"
+  },
+  "flt_web": {
+    "message": "Web"
+  },
+  "flt_key": {
+    "message": "Keys"
+  },
+  "flt_oauth": {
+    "message": "OAuth"
+  },
+  "flt_free": {
+    "message": "Free"
+  },
+  "kind_web": {
+    "message": "web"
+  },
+  "kind_key": {
+    "message": "key"
+  },
+  "kind_oauth": {
+    "message": "OAuth"
+  },
+  "kind_retired": {
+    "message": "provider removed from OmniRoute"
+  },
+  "unit_ms": {
+    "message": " ms"
+  },
+  "unit_s": {
+    "message": " s"
+  },
+  "exp_gone": {
+    "message": "expired"
+  },
+  "exp_hours": {
+    "message": "$1 h"
+  },
+  "exp_days": {
+    "message": "$1 d"
+  },
+  "exp_soon": {
+    "message": "cookies expire in $1"
+  },
+  "site_down": {
+    "message": "site is down"
+  },
+  "probe_slow": {
+    "message": "slow · $1"
+  },
+  "probe_never": {
+    "message": "never checked"
+  },
+  "err_auth": {
+    "message": "login expired"
+  },
+  "err_limit": {
+    "message": "rate-limited"
+  },
+  "err_upstream": {
+    "message": "provider error"
+  },
+  "err_timeout": {
+    "message": "timed out"
+  },
+  "err_flagged": {
+    "message": "flagged broken by OmniRoute"
+  },
+  "row_refresh": {
+    "message": "Refresh session (opens the site in background)"
+  },
+  "row_probe": {
+    "message": "Check now"
+  },
+  "clean_title": {
+    "message": "Can be cleaned up"
+  },
+  "clean_go": {
+    "message": "Remove $1"
+  },
+  "clean_dup": {
+    "message": "duplicates of one account: $1"
+  },
+  "clean_retired": {
+    "message": "providers OmniRoute no longer has: $1 ($2)"
+  },
+  "clean_dead": {
+    "message": "dead for over 3 days: $1"
+  },
+  "table_colProv": {
+    "message": "Provider"
+  },
+  "table_colType": {
+    "message": "Type"
+  },
+  "table_colAcc": {
+    "message": "Acc."
+  },
+  "table_colSite": {
+    "message": "Site"
+  },
+  "table_colCookie": {
+    "message": "Cookies"
+  },
+  "table_colSpeed": {
+    "message": "Speed"
+  },
+  "table_col7d": {
+    "message": "7 days"
+  },
+  "table_colErr": {
+    "message": "Error"
+  },
+  "table_selAll": {
+    "message": "Select all"
+  },
+  "table_selN": {
+    "message": "selected: $1"
+  },
+  "table_refreshSel": {
+    "message": "🔄 Refresh"
+  },
+  "table_delSel": {
+    "message": "🗑 Broken"
+  },
+  "wiz_step": {
+    "message": "Left: $1"
+  },
+  "wiz_eta": {
+    "message": "~$1 min"
+  },
+  "wiz_conns": {
+    "message": "connections: $1"
+  },
+  "wiz_skip": {
+    "message": "Skip"
+  },
+  "wiz_never": {
+    "message": "Don't suggest"
+  },
+  "wiz_delete": {
+    "message": "Delete connections"
+  },
+  "wiz_next": {
+    "message": "Up next"
+  },
+  "wiz_more": {
+    "message": "and $1 more"
+  },
+  "wiz_doneTitle": {
+    "message": "All good — nothing to fix"
+  },
+  "wiz_doneHint": {
+    "message": "The Wizard will show anything that breaks here."
+  },
+  "wiz_showAll": {
+    "message": "Show missing too"
+  },
+  "wiz_whyImport": {
+    "message": "in the list from another PC"
+  },
+  "wiz_whyMissing": {
+    "message": "not added yet"
+  },
+  "wiz_txtWebFix": {
+    "message": "I'll open $1 in a background tab and grab fresh cookies. If you're still logged in there, it fixes itself."
+  },
+  "wiz_txtNeedLogin": {
+    "message": "The session on $1 really ended. I'll open the login page: log in and send any message — I'll add it myself and notify you."
+  },
+  "wiz_txtWebAdd": {
+    "message": "I'll open $1. Log in and send any message — the extension adds the session to OmniRoute itself and notifies you. You can close this window."
+  },
+  "wiz_txtOauth": {
+    "message": "Needs a fresh OAuth login. I'll open the OAuth section and start it."
+  },
+  "wiz_txtKey": {
+    "message": "The key stopped working. I'll open the page to get a new one and the form to paste it."
+  },
+  "wiz_txtRetired": {
+    "message": "OmniRoute no longer supports this provider — the connections are useless."
+  },
+  "wiz_goFix": {
+    "message": "Fix now"
+  },
+  "wiz_goLogin": {
+    "message": "Open and log in"
+  },
+  "wiz_goKey": {
+    "message": "Get a new key"
+  },
+  "wiz_goDelete": {
+    "message": "Delete ($1)"
+  },
+  "wiz_refreshing": {
+    "message": "Refreshing the session on $1…"
+  },
+  "wiz_fixed": {
+    "message": "Fixed — working"
+  },
+  "wiz_needLogin": {
+    "message": "Needs a login on the site"
+  },
+  "wiz_waitLogin": {
+    "message": "Waiting for the login — I'll add it once the session appears (15 min)."
+  },
+  "refresh_start": {
+    "message": "Opening sites in the background one by one…"
+  },
+  "refresh_progress": {
+    "message": "Refreshing $1/$2 · $3"
+  },
+  "refresh_done": {
+    "message": "Refreshed: 🟢 $1 working · 🔴 $2 need a login"
+  },
+  "refresh_none": {
+    "message": "Nothing to refresh: no web sessions in OmniRoute"
+  },
+  "refresh_busy": {
+    "message": "A refresh is already running"
+  },
+  "set_autoRepair": {
+    "message": "Auto-repair broken web sessions"
+  },
+  "set_autoRepairHint": {
+    "message": "When the background check finds a dead web session, the extension opens the site in a background tab, grabs fresh cookies and re-checks. At most once per 6 hours per provider."
+  },
+  "set_nightly": {
+    "message": "Nightly session refresh (04:00)"
+  },
+  "set_import": {
+    "message": "⬆ Load a list → into the Wizard"
+  },
+  "set_importDone": {
+    "message": "Added to the Wizard: $1 of $2 (the rest already exist)"
+  },
+  "set_importBad": {
+    "message": "This file doesn't look like a connection list"
+  },
+  "bg_autoAddOk": {
+    "message": "✓ $1 added to OmniRoute and working"
+  },
+  "bg_autoAddFail": {
+    "message": "⚠ $1: session captured but the check failed — $2"
+  },
+  "nav_chat": {
+    "message": "Test chat"
+  },
+  "row_open": {
+    "message": "Click for details, models and actions"
+  },
+  "det_refresh": {
+    "message": "↻ Refresh session"
+  },
+  "det_login": {
+    "message": "🔑 Log in again"
+  },
+  "det_loginTitle": {
+    "message": "Opens the login page. Log in and send any message — the extension adds the session itself and notifies you."
+  },
+  "det_newKey": {
+    "message": "🔑 New key"
+  },
+  "det_chat": {
+    "message": "💬 Chat"
+  },
+  "det_works": {
+    "message": "working · answered in $1"
+  },
+  "det_siteUp": {
+    "message": "site is up ($1)"
+  },
+  "det_siteUnknown": {
+    "message": "site: not checked"
+  },
+  "det_expUnknown": {
+    "message": "cookie expiry unknown"
+  },
+  "det_models": {
+    "message": "Models via OmniRoute"
+  },
+  "det_noModels": {
+    "message": "OmniRoute exposes no models for this provider — it can't be called right now."
+  },
+  "det_loadingModels": {
+    "message": "Loading models…"
+  },
+  "det_copyModel": {
+    "message": "Click to copy “$1” — the model name for Claude Code / OpenCode"
+  },
+  "det_conns": {
+    "message": "Connections"
+  },
+  "rs_title": {
+    "message": "Session refresh: $1 of $2 working"
+  },
+  "rs_ok": {
+    "message": "refreshed, working"
+  },
+  "rs_needLogin": {
+    "message": "session ended — log in"
+  },
+  "rs_noSession": {
+    "message": "site gave no session — log in"
+  },
+  "rs_unknown": {
+    "message": "refreshed, check gave no answer"
+  },
+  "rs_error": {
+    "message": "not working — provider or OmniRoute error"
+  },
+  "rs_hint": {
+    "message": "The tabs opened and closed by themselves — that's how fresh cookies were grabbed. For 🔑 press “Log in again”: log in on the site, the rest happens by itself."
+  },
+  "table_hint2": {
+    "message": "☐ selects, click a row for details"
+  },
+  "chat_prov": {
+    "message": "Provider"
+  },
+  "chat_model": {
+    "message": "Model"
+  },
+  "chat_ph": {
+    "message": "Type a message… (Ctrl+Enter to send)"
+  },
+  "chat_send": {
+    "message": "Send"
+  },
+  "chat_clear": {
+    "message": "Clear"
+  },
+  "chat_waiting": {
+    "message": "Waiting…"
+  },
+  "chat_tokens": {
+    "message": "$1 tokens"
+  },
+  "chat_hint": {
+    "message": "Try any connection with a live request: pick a provider and model, say hi. The reply goes through your OmniRoute — same as Claude Code / OpenCode."
+  },
+  "chat_noModels": {
+    "message": "no models available"
+  },
+  "key_stepsDeep": {
+    "message": "On the page that opens: log in → “Create key” → copy the key and paste it below."
+  },
+  "key_stepsHome": {
+    "message": "I'll open the provider's site: log in → find “API Keys” in the menu (usually Settings or Dashboard) → create a key and paste it below."
+  },
+  "web_asNew": {
+    "message": "+ As a new account"
+  },
+  "web_asNewTitle": {
+    "message": "This is a different account — create a separate connection, leave the existing one alone"
+  },
+  "web_predictUpdName": {
+    "message": "will refresh the connection “$1” with fresh cookies"
+  },
+  "web_sentDone": {
+    "message": "Sent"
+  },
+  "popup_updatedProbing": {
+    "message": "Updated “$1” — checking…"
+  },
+  "kind_other": {
+    "message": "not in the extension's catalog"
+  },
+  "refresh_probing": {
+    "message": "Checking $1/$2 · $3"
+  },
+  "rs_updatedConn": {
+    "message": "updated “$1”"
+  },
+  "rs_newConn": {
+    "message": "new connection “$1”"
+  },
+  "bg_noRequest": {
+    "message": "the site sent no request within 15 s"
+  },
+  "det_loginWorking": {
+    "message": "Checking login…"
+  },
+  "det_loginPushed": {
+    "message": "Logged in — session sent"
+  },
+  "det_loginPushedDead": {
+    "message": "Session sent but the site rejected it — log in again"
+  },
+  "det_loginOpened": {
+    "message": "Opened the site — log in there"
+  },
+  "set_size": {
+    "message": "Window size"
+  },
+  "set_sizeS": {
+    "message": "Compact"
+  },
+  "set_sizeM": {
+    "message": "Wide"
+  },
+  "set_sizeL": {
+    "message": "Large"
+  },
+  "rs_running": {
+    "message": "running…"
+  },
+  "det_loginPushedUnk": {
+    "message": "Session sent, the check gave no answer"
+  },
+  "bg_noSessionNames": {
+    "message": "no login cookie ($1). Present: $2"
+  },
+  "bg_loggedOutReply": {
+    "message": "placeholder reply “$1” — the session is logged out"
+  },
+  "bg_parkChanged": {
+    "message": "Health check: $1"
+  },
+  "park_row": {
+    "message": "switched off by the health check $1"
+  },
+  "park_detail": {
+    "message": "The health check switched off $1 connections ($2): 3 failures in a row. They come back after 2 good checks."
+  },
+  "park_enableNow": {
+    "message": "▶ Enable now"
+  },
+  "set_autoPark": {
+    "message": "Switch off broken, bring back revived"
+  },
+  "set_autoParkHint": {
+    "message": "A provider that fails the real check 3 times in a row gets its OmniRoute connections switched off (not deleted), so routing and OpenCode stop landing on it. Each later check wakes one connection: 2 passes in a row switch everything back on."
   }
 }
